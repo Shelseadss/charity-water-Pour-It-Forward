@@ -1,0 +1,390 @@
+<!doctype html>
+<!-- Declares this document as an HTML5 document. -->
+<html lang="en">
+<!-- Sets the document language to English for accessibility and browser tools. -->
+<head>
+  <!-- Contains document metadata and external resources. -->
+  <meta charset="utf-8">
+  <!-- Enables standard Unicode character support. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Makes the gameplay layout scale correctly on mobile and desktop screens. -->
+  <title>Pour It Forward | Gameplay</title>
+  <!-- Sets the browser tab title for the gameplay screen. -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+  <!-- Google Fonts Import-->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+
+</head>
+<!-- Ends the document metadata section. -->
+<body>
+  <!-- Contains the visible gameplay screen. -->
+  <main class="container-fluid">
+    <!-- Provides a full-width responsive Bootstrap container for the game. -->
+    <section id="gameplay-screen" class="min-vh-100 py-4">
+      <!-- Holds the complete gameplay screen and adds responsive vertical spacing. -->
+      <div class="container">
+        <!-- Constrains gameplay content to a readable width on larger screens. -->
+        <header class="row align-items-center g-3 mb-4">
+          <!-- Creates a responsive header row for the region, level, and game status. -->
+          <div class="col-12 col-md-6">
+            <!-- Places the region and level information in the left side of the header. -->
+            <p class="text-uppercase mb-1">Dhaka</p>
+            <!-- Identifies the region or city for the current level. -->
+            <h1 class="h2 mb-0">Level 1</h1>
+            <!-- Displays the current playable level. -->
+          </div>
+          <!-- Ends the region and level information column. -->
+          <div class="col-12 col-md-6">
+            <!-- Places gameplay status information below or beside the title. -->
+            <div class="row g-2">
+              <!-- Creates a nested responsive row for progress and timer information. -->
+              <div class="col-6">
+                <!-- Gives half of the status row to the level progress indicator. -->
+                <div class="game-status border p-2 text-center">
+                  <!-- Reserves the styled area for the current level progress. -->
+                  Level 1/3
+                  <!-- Shows the current level count while allowing future levels. -->
+                </div>
+                <!-- Ends the level progress indicator. -->
+              </div>
+              <!-- Ends the level progress column. -->
+              <div class="col-6">
+                <!-- Gives half of the status row to the timer indicator. -->
+                <div class="game-status border p-2 text-center">
+                  <!-- Reserves the styled area for the gameplay timer. -->
+                  Timer
+                  <!-- Provides a placeholder for the future timer value. -->
+                </div>
+                <!-- Ends the timer indicator. -->
+              </div>
+              <!-- Ends the timer column. -->
+            </div>
+            <!-- Ends the gameplay status row. -->
+          </div>
+          <!-- Ends the gameplay status column. -->
+        </header>
+        <!-- Ends the gameplay header. -->
+        <div class="row align-items-center g-4 mt-4">
+          <!-- Creates a responsive row for the water source, puzzle board, and community fountain. -->
+          <div class="col-12 col-md-4 text-center order-1">
+            <!-- Places the water source above the board on mobile and to the left on landscape layouts. -->
+            <div class="water-source border p-3">
+              <!-- Defines the area where the water begins. -->
+              <span class="h4">Water Source</span>
+              <!-- Labels the starting point of the pipe network. -->
+            </div>
+            <!-- Ends the water source area. -->
+          </div>
+          <!-- Ends the water source column. -->
+          <div class="col-12 col-md-4 order-2">
+            <!-- Places the puzzle board below the source on mobile and between both endpoints on landscape layouts. -->
+            <div class="puzzle-board border p-2 p-sm-3">
+              <!-- Defines the outer gameplay board that will contain the pipe grid. -->
+              <div class="row row-cols-4 row-cols-sm-6 g-0" aria-label="Pipe puzzle board">
+                <!-- Creates a responsive four-column mobile grid that becomes six columns on small screens and larger. -->
+                <div class="col">
+                  <!-- Defines the first responsive puzzle grid cell. -->
+                  <button type="button" class="pipe-cell w-100" aria-label="Pipe tile 1">
+                    <!-- Provides an accessible clickable control for the first pipe tile. -->
+                    ┌
+                    <!-- Displays the first pipe shape placeholder. -->
+                  </button>
+                  <!-- Ends the first pipe tile control. -->
+                </div>
+                <!-- Ends the first puzzle grid cell. -->
+                <div class="col">
+                  <!-- Defines the second responsive puzzle grid cell. -->
+                  <button type="button" class="pipe-cell w-100" aria-label="Pipe tile 2">
+                    <!-- Provides an accessible clickable control for the second pipe tile. -->
+                    ─
+                    <!-- Displays the second pipe shape placeholder. -->
+                  </button>
+                  <!-- Ends the second pipe tile control. -->
+                </div>
+                <!-- Ends the second puzzle grid cell. -->
+                <div class="col">
+                  <!-- Defines the third responsive puzzle grid cell. -->
+                  <button type="button" class="pipe-cell w-100" aria-label="Pipe tile 3">
+                    <!-- Provides an accessible clickable control for the third pipe tile. -->
+                    ┐
+                    <!-- Displays the third pipe shape placeholder. -->
+                  </button>
+                  <!-- Ends the third pipe tile control. -->
+                </div>
+                <!-- Ends the third puzzle grid cell. -->
+                <div class="col">
+                  <!-- Defines the fourth responsive puzzle grid cell. -->
+                  <button type="button" class="pipe-cell w-100" aria-label="Pipe tile 4">
+                    <!-- Provides an accessible clickable control for the fourth pipe tile. -->
+                    │
+                    <!-- Displays the fourth pipe shape placeholder. -->
+                  </button>
+                  <!-- Ends the fourth pipe tile control. -->
+                </div>
+                <!-- Ends the fourth puzzle grid cell. -->
+                <div class="col">
+                  <!-- Defines the fifth responsive puzzle grid cell. -->
+                  <button type="button" class="pipe-cell w-100" aria-label="Pipe tile 5">
+                    <!-- Provides an accessible clickable control for the fifth pipe tile. -->
+                    └
+                    <!-- Displays the fifth pipe shape placeholder. -->
+                  </button>
+                  <!-- Ends the fifth pipe tile control. -->
+                </div>
+                <!-- Ends the fifth puzzle grid cell. -->
+                <div class="col">
+                  <!-- Defines the sixth responsive puzzle grid cell. -->
+                  <button type="button" class="pipe-cell w-100" aria-label="Pipe tile 6">
+                    <!-- Provides an accessible clickable control for the sixth pipe tile. -->
+                    ─
+                    <!-- Displays the sixth pipe shape placeholder. -->
+                  </button>
+                  <!-- Ends the sixth pipe tile control. -->
+                </div>
+                <!-- Ends the sixth puzzle grid cell. -->
+                <div class="col">
+                  <!-- Defines the seventh responsive puzzle grid cell. -->
+                  <button type="button" class="pipe-cell w-100" aria-label="Pipe tile 7">
+                    <!-- Provides an accessible clickable control for the seventh pipe tile. -->
+                    ┌
+                    <!-- Displays the seventh pipe shape placeholder. -->
+                  </button>
+                  <!-- Ends the seventh pipe tile control. -->
+                </div>
+                <!-- Ends the seventh puzzle grid cell. -->
+                <div class="col">
+                  <!-- Defines the eighth responsive puzzle grid cell. -->
+                  <button type="button" class="pipe-cell w-100" aria-label="Pipe tile 8">
+                    <!-- Provides an accessible clickable control for the eighth pipe tile. -->
+                    │
+                    <!-- Displays the eighth pipe shape placeholder. -->
+                  </button>
+                  <!-- Ends the eighth pipe tile control. -->
+                </div>
+                <!-- Ends the eighth puzzle grid cell. -->
+                <div class="col">
+                  <!-- Defines the ninth responsive puzzle grid cell. -->
+                  <button type="button" class="pipe-cell w-100" aria-label="Pipe tile 9">
+                    <!-- Provides an accessible clickable control for the ninth pipe tile. -->
+                    │
+                    <!-- Displays the ninth pipe shape placeholder. -->
+                  </button>
+                  <!-- Ends the ninth pipe tile control. -->
+                </div>
+                <!-- Ends the ninth puzzle grid cell. -->
+                <div class="col">
+                  <!-- Defines the tenth responsive puzzle grid cell. -->
+                  <button type="button" class="pipe-cell w-100" aria-label="Pipe tile 10">
+                    <!-- Provides an accessible clickable control for the tenth pipe tile. -->
+                    ┐
+                    <!-- Displays the tenth pipe shape placeholder. -->
+                  </button>
+                  <!-- Ends the tenth pipe tile control. -->
+                </div>
+                <!-- Ends the tenth puzzle grid cell. -->
+                <div class="col">
+                  <!-- Defines the eleventh responsive puzzle grid cell. -->
+                  <button type="button" class="pipe-cell w-100" aria-label="Pipe tile 11">
+                    <!-- Provides an accessible clickable control for the eleventh pipe tile. -->
+                    ─
+                    <!-- Displays the eleventh pipe shape placeholder. -->
+                  </button>
+                  <!-- Ends the eleventh pipe tile control. -->
+                </div>
+                <!-- Ends the eleventh puzzle grid cell. -->
+                <div class="col">
+                  <!-- Defines the twelfth responsive puzzle grid cell. -->
+                  <button type="button" class="pipe-cell w-100" aria-label="Pipe tile 12">
+                    <!-- Provides an accessible clickable control for the twelfth pipe tile. -->
+                    ┘
+                    <!-- Displays the twelfth pipe shape placeholder. -->
+                  </button>
+                  <!-- Ends the twelfth pipe tile control. -->
+                </div>
+                <!-- Ends the twelfth puzzle grid cell. -->
+                <div class="col">
+                  <!-- Defines the thirteenth responsive puzzle grid cell. -->
+                  <button type="button" class="pipe-cell w-100" aria-label="Pipe tile 13">
+                    <!-- Provides an accessible clickable control for the thirteenth pipe tile. -->
+                    ─
+                    <!-- Displays the thirteenth pipe shape placeholder. -->
+                  </button>
+                  <!-- Ends the thirteenth pipe tile control. -->
+                </div>
+                <!-- Ends the thirteenth puzzle grid cell. -->
+                <div class="col">
+                  <!-- Defines the fourteenth responsive puzzle grid cell. -->
+                  <button type="button" class="pipe-cell w-100" aria-label="Pipe tile 14">
+                    <!-- Provides an accessible clickable control for the fourteenth pipe tile. -->
+                    └
+                    <!-- Displays the fourteenth pipe shape placeholder. -->
+                  </button>
+                  <!-- Ends the fourteenth pipe tile control. -->
+                </div>
+                <!-- Ends the fourteenth puzzle grid cell. -->
+                <div class="col">
+                  <!-- Defines the fifteenth responsive puzzle grid cell. -->
+                  <button type="button" class="pipe-cell w-100" aria-label="Pipe tile 15">
+                    <!-- Provides an accessible clickable control for the fifteenth pipe tile. -->
+                    ─
+                    <!-- Displays the fifteenth pipe shape placeholder. -->
+                  </button>
+                  <!-- Ends the fifteenth pipe tile control. -->
+                </div>
+                <!-- Ends the fifteenth puzzle grid cell. -->
+                <div class="col">
+                  <!-- Defines the sixteenth responsive puzzle grid cell. -->
+                  <button type="button" class="pipe-cell w-100" aria-label="Pipe tile 16">
+                    <!-- Provides an accessible clickable control for the sixteenth pipe tile. -->
+                    ┘
+                    <!-- Displays the sixteenth pipe shape placeholder. -->
+                  </button>
+                  <!-- Ends the sixteenth pipe tile control. -->
+                </div>
+                <!-- Ends the sixteenth puzzle grid cell. -->
+                <div class="col">
+                  <!-- Defines the seventeenth responsive puzzle grid cell. -->
+                  <button type="button" class="pipe-cell w-100" aria-label="Pipe tile 17">
+                    <!-- Provides an accessible clickable control for the seventeenth pipe tile. -->
+                    │
+                    <!-- Displays the seventeenth pipe shape placeholder. -->
+                  </button>
+                  <!-- Ends the seventeenth pipe tile control. -->
+                </div>
+                <!-- Ends the seventeenth puzzle grid cell. -->
+                <div class="col">
+                  <!-- Defines the eighteenth responsive puzzle grid cell. -->
+                  <button type="button" class="pipe-cell w-100" aria-label="Pipe tile 18">
+                    <!-- Provides an accessible clickable control for the eighteenth pipe tile. -->
+                    ┌
+                    <!-- Displays the eighteenth pipe shape placeholder. -->
+                  </button>
+                  <!-- Ends the eighteenth pipe tile control. -->
+                </div>
+                <!-- Ends the eighteenth puzzle grid cell. -->
+                <div class="col">
+                  <!-- Defines the nineteenth responsive puzzle grid cell. -->
+                  <button type="button" class="pipe-cell w-100" aria-label="Pipe tile 19">
+                    <!-- Provides an accessible clickable control for the nineteenth pipe tile. -->
+                    ─
+                    <!-- Displays the nineteenth pipe shape placeholder. -->
+                  </button>
+                  <!-- Ends the nineteenth pipe tile control. -->
+                </div>
+                <!-- Ends the nineteenth puzzle grid cell. -->
+                <div class="col">
+                  <!-- Defines the twentieth responsive puzzle grid cell. -->
+                  <button type="button" class="pipe-cell w-100" aria-label="Pipe tile 20">
+                    <!-- Provides an accessible clickable control for the twentieth pipe tile. -->
+                    ┐
+                    <!-- Displays the twentieth pipe shape placeholder. -->
+                  </button>
+                  <!-- Ends the twentieth pipe tile control. -->
+                </div>
+                <!-- Ends the twentieth puzzle grid cell. -->
+                <div class="col">
+                  <!-- Defines the twenty-first responsive puzzle grid cell. -->
+                  <button type="button" class="pipe-cell w-100" aria-label="Pipe tile 21">
+                    <!-- Provides an accessible clickable control for the twenty-first pipe tile. -->
+                    │
+                    <!-- Displays the twenty-first pipe shape placeholder. -->
+                  </button>
+                  <!-- Ends the twenty-first pipe tile control. -->
+                </div>
+                <!-- Ends the twenty-first puzzle grid cell. -->
+                <div class="col">
+                  <!-- Defines the twenty-second responsive puzzle grid cell. -->
+                  <button type="button" class="pipe-cell w-100" aria-label="Pipe tile 22">
+                    <!-- Provides an accessible clickable control for the twenty-second pipe tile. -->
+                    └
+                    <!-- Displays the twenty-second pipe shape placeholder. -->
+                  </button>
+                  <!-- Ends the twenty-second pipe tile control. -->
+                </div>
+                <!-- Ends the twenty-second puzzle grid cell. -->
+                <div class="col">
+                  <!-- Defines the twenty-third responsive puzzle grid cell. -->
+                  <button type="button" class="pipe-cell w-100" aria-label="Pipe tile 23">
+                    <!-- Provides an accessible clickable control for the twenty-third pipe tile. -->
+                    ─
+                    <!-- Displays the twenty-third pipe shape placeholder. -->
+                  </button>
+                  <!-- Ends the twenty-third pipe tile control. -->
+                </div>
+                <!-- Ends the twenty-third puzzle grid cell. -->
+                <div class="col">
+                  <!-- Defines the twenty-fourth responsive puzzle grid cell. -->
+                  <button type="button" class="pipe-cell w-100" aria-label="Pipe tile 24">
+                    <!-- Provides an accessible clickable control for the twenty-fourth pipe tile. -->
+                    ┘
+                    <!-- Displays the twenty-fourth pipe shape placeholder. -->
+                  </button>
+                  <!-- Ends the twenty-fourth pipe tile control. -->
+                </div>
+                <!-- Ends the twenty-fourth puzzle grid cell. -->
+              </div>
+              <!-- Ends the responsive pipe puzzle grid. -->
+            </div>
+            <!-- Ends the puzzle board. -->
+          </div>
+          <!-- Ends the puzzle board column. -->
+          <div class="col-12 col-md-4 text-center order-3">
+            <!-- Places the community fountain below the board on mobile and to the right on landscape layouts. -->
+            <div class="water-fountain border p-3">
+              <!-- Defines the destination where connected water must arrive. -->
+              <span class="h4">Community Fountain</span>
+              <!-- Labels the clean-water destination. -->
+            </div>
+            <!-- Ends the community fountain area. -->
+          </div>
+          <!-- Ends the community fountain column. -->
+        </div>
+        <!-- Ends the responsive source, board, and fountain row. -->
+        <div class="row justify-content-center mt-4">
+          <!-- Creates a centered responsive row for the gameplay instruction. -->
+          <div class="col-12 col-md-8 text-center">
+            <!-- Provides the instruction area below the board and endpoint layout. -->
+            <p class="mb-0">Tap or click a pipe to rotate it and connect the water.</p>
+            <!-- Explains the player's main interaction with the pipe tiles. -->
+          </div>
+          <!-- Ends the instruction column. -->
+        </div>
+        <!-- Ends the gameplay instruction row. -->
+        <div class="row g-3 mt-4">
+          <!-- Creates a responsive row for gameplay navigation controls. -->
+          <div class="col-12 col-sm-6">
+            <!-- Provides the back navigation column. -->
+            <button type="button" class="btn btn-outline-secondary w-100">
+              <!-- Provides a future control for returning to the level map. -->
+              Back to Map
+              <!-- Labels the map navigation control. -->
+            </button>
+            <!-- Ends the back navigation control. -->
+          </div>
+          <!-- Ends the back navigation column. -->
+          <div class="col-12 col-sm-6">
+            <!-- Provides the restart navigation column. -->
+            <button type="button" class="btn btn-primary w-100">
+              <!-- Provides a future control for restarting the current level. -->
+              Restart Level
+              <!-- Labels the level restart control. -->
+            </button>
+            <!-- Ends the restart navigation control. -->
+          </div>
+          <!-- Ends the restart navigation column. -->
+        </div>
+        <!-- Ends the gameplay navigation row. -->
+      </div>
+      <!-- Ends the gameplay container. -->
+    </section>
+    <!-- Ends the gameplay screen. -->
+  </main>
+  <!-- Ends the visible game content. -->
+</body>
+<!-- Ends the document body. -->
+</html>
+<!-- Ends the HTML document. -->
