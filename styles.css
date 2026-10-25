@@ -36,20 +36,189 @@ p{
 }
 
 body {
-    background-color: var(--quaternary);
-    color: var(--secondary);
+    background-color: var(--warm-white);
+    color: var(--charcoal);
     margin: 0;
     padding: 0;
 }
 
+.gameplay-blurred {
+    filter: blur(6px);
+    user-select: none;
+}
+
+.start-screen {
+    position: fixed;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    padding: 1.5rem;
+    background-color: rgba(255, 247, 225, 0.2);
+    z-index: 20;
+}
+
+.start-card {
+    width: min(100%, 28rem);
+    padding: 2.5rem 2rem;
+    background-color: var(--warm-white);
+    border: 3px solid var(--charity-yellow);
+    box-shadow: 0 0.75rem 2rem rgba(26, 26, 26, 0.2);
+}
+
+.start-card h1,
+.start-card h2 {
+    color: var(--water-blue);
+    font-weight: 700;
+}
+
+#start-description {
+    max-width: 32rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.level-details {
+    color: var(--water-blue);
+    font-weight: 700;
+}
+
+.start-screen-hidden {
+    display: none;
+}
+
+.map-screen {
+    background-color: var(--warm-white);
+}
+
+.map-card {
+    max-width: 52rem;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fff;
+    border: 3px solid var(--charity-yellow);
+    box-shadow: 0 0.75rem 2rem rgba(26, 26, 26, 0.12);
+}
+
+.map-card h1 {
+    color: var(--water-blue);
+}
+
+.level-map {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.level-map-button {
+    min-height: 8rem;
+    padding: 1rem;
+    text-align: left;
+    border: 2px solid var(--faded);
+    background-color: var(--warm-white);
+}
+
+.level-map-button:not(:disabled):hover,
+.level-map-button:not(:disabled):focus-visible {
+    border-color: var(--charity-yellow);
+}
+
+.level-map-button.unlocked {
+    border-color: var(--water-teal);
+}
+
+.level-map-button.completed {
+    border-color: var(--water-blue);
+    background-color: #e7f3f6;
+}
+
+.level-map-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.level-map-status {
+    display: block;
+    margin-top: 0.5rem;
+    color: var(--water-blue);
+    font-weight: 700;
+}
+
+.level-map-button span:not(.level-map-status) {
+    display: block;
+    margin-top: 0.25rem;
+}
+
+.water-source{
+    width: 20%;
+    box-sizing: border-box;
+}
+
+.water-fountain{
+    width: 20%;
+    box-sizing: border-box;
+}
+
 .puzzle-board{
     width: 100%;
-    max-width: 600px;
+    max-width: 720px;
     margin: 0 auto;
-    height: 360px;
+    height: auto;
+}
+
+#puzzle-grid {
+    display: grid;
+    grid-template-columns: repeat(var(--board-columns), minmax(0, 1fr));
+    width: 100%;
+}
+
+#puzzle-grid > .col {
+    width: auto;
+    min-width: 0;
+    height: auto;
 }
 
 .pipe-cell {
   width: 100%;
-  height: 80px;
+  aspect-ratio: 1;
+  height: auto;
+  padding: 0;
+  display: block;
+}
+
+.pipe-cell.connected {
+  background-color: var(--water-teal);
+  color: var(--water-blue);
+}
+
+.win-message {
+    color: var(--water-blue);
+    font-weight: 700;
+}
+
+.lose-message {
+    color: var(--burnt-orange);
+    font-weight: 700;
+}
+
+.confetti-container {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.confetti-piece {
+    position: absolute;
+    top: -1rem;
+    width: 0.65rem;
+    height: 1rem;
+    animation: fall-and-spin linear forwards;
+}
+
+@keyframes fall-and-spin {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+    }
 }
