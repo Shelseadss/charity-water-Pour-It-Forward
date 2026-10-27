@@ -189,6 +189,18 @@ function renderLevelMap() {
   elements.levelMap.replaceChildren();
 
   levels.forEach((level) => {
+    // The same loop written with for would be:
+    // for (let index = 0; index < levels.length; index += 1) {
+    //   const level = levels[index];
+    //   // Put the loop body here.
+    // }
+    // A while version would be:
+    // let index = 0;
+    // while (index < levels.length) {
+    //   const level = levels[index];
+    //   // Put the loop body here.
+    //   index += 1;
+    // }
     const isCompleted = completedLevels.has(level.id);
     const isUnlocked = level.id <= highestUnlockedLevel;
     const status = isCompleted ? "Completed" : isUnlocked ? "Unlocked" : "Locked";
@@ -240,6 +252,18 @@ function renderBoard(level) {
   }));
 
   state.tiles.forEach((tileState) => {
+    // The same loop written with for would be:
+    // for (let index = 0; index < state.tiles.length; index += 1) {
+    //   const tileState = state.tiles[index];
+    //   // Create and append the button here.
+    // }
+    // A while version would be:
+    // let index = 0;
+    // while (index < state.tiles.length) {
+    //   const tileState = state.tiles[index];
+    //   // Create and append the button here.
+    //   index += 1;
+    // }
     const tile = document.createElement("button");
     tile.type = "button";
     tile.className = "pipe-cell";
@@ -292,6 +316,18 @@ function findConnectedTiles() {
     const column = (tileNumber - 1) % level.columns;
 
     tile.connections.forEach((direction) => {
+      // The same loop written with for would be:
+      // for (let index = 0; index < tile.connections.length; index += 1) {
+      //   const direction = tile.connections[index];
+      //   // Check this direction here.
+      // }
+      // A while version would be:
+      // let index = 0;
+      // while (index < tile.connections.length) {
+      //   const direction = tile.connections[index];
+      //   // Check this direction here.
+      //   index += 1;
+      // }
       const change = directions[direction];
       const neighborNumber = getTileNumber(row + change.row, column + change.column);
       const neighbor = neighborNumber && getTileState(neighborNumber);
@@ -311,6 +347,18 @@ function updateConnectedStyles(shouldAwardPoints = false) {
 
   if (shouldAwardPoints) {
     connectedTiles.forEach((tileNumber) => {
+      // The same loop written with for...of would be:
+      // for (const tileNumber of connectedTiles) {
+      //   // Award points for this tile here.
+      // }
+      // A while version would first convert the Set to an array:
+      // const tiles = [...connectedTiles];
+      // let index = 0;
+      // while (index < tiles.length) {
+      //   const tileNumber = tiles[index];
+      //   // Award points for this tile here.
+      //   index += 1;
+      // }
       if (!state.scoredTiles.has(tileNumber)) {
         state.scoredTiles.add(tileNumber);
         state.score += Math.round(5 * level.scoreMultiplier);
@@ -320,6 +368,18 @@ function updateConnectedStyles(shouldAwardPoints = false) {
   }
 
   state.tiles.forEach((tile) => {
+    // The same loop written with for would be:
+    // for (let index = 0; index < state.tiles.length; index += 1) {
+    //   const tile = state.tiles[index];
+    //   // Update this tile's connected style here.
+    // }
+    // A while version would be:
+    // let index = 0;
+    // while (index < state.tiles.length) {
+    //   const tile = state.tiles[index];
+    //   // Update this tile's connected style here.
+    //   index += 1;
+    // }
     getTileElement(tile.number).classList.toggle("connected", connectedTiles.has(tile.number));
   });
 
@@ -344,6 +404,18 @@ function rotateTile(tileNumber) {
 
 function setBoardEnabled(enabled) {
   state.tiles.forEach((tile) => {
+    // The same loop written with for would be:
+    // for (let index = 0; index < state.tiles.length; index += 1) {
+    //   const tile = state.tiles[index];
+    //   // Enable or disable this tile here.
+    // }
+    // A while version would be:
+    // let index = 0;
+    // while (index < state.tiles.length) {
+    //   const tile = state.tiles[index];
+    //   // Enable or disable this tile here.
+    //   index += 1;
+    // }
     getTileElement(tile.number).disabled = !enabled;
   });
 }
@@ -405,6 +477,18 @@ function resetLevel() {
   elements.gameMessage.classList.remove("win-message", "lose-message");
 
   state.tiles.forEach((tile) => {
+    // The same loop written with for would be:
+    // for (let index = 0; index < state.tiles.length; index += 1) {
+    //   const tile = state.tiles[index];
+    //   // Reset this tile here.
+    // }
+    // A while version would be:
+    // let index = 0;
+    // while (index < state.tiles.length) {
+    //   const tile = state.tiles[index];
+    //   // Reset this tile here.
+    //   index += 1;
+    // }
     tile.connections = [...tile.initialConnections];
     const element = getTileElement(tile.number);
     element.textContent = getPipeSymbol(tile.connections);

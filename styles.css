@@ -43,6 +43,20 @@ p {
 .page-container {
   width: min(100%, 70rem);
   margin: 0 auto;
+  margin-top: 6rem;
+}
+
+.page-container h1 {
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.Logo-Placeholder-Top, .Logo-Placeholder-Bottom {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .card {
@@ -56,14 +70,14 @@ p {
   margin: 0 auto;
   padding: 2rem;
 }
-
+ /*
 .eyebrow {
   margin: 0 0 0.5rem;
   color: var(--water-blue);
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-}
+}*/
 
 .level-map {
   display: grid;
